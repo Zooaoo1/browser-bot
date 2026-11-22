@@ -1,0 +1,38 @@
+name: Deploy to OnKernel
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          npx playwright install chromium
+
+      - name: Deploy to OnKernel
+        env:
+          ONKERNEL_API_KEY: ${{ secrets.ONKERNEL_API_KEY }}
+        run: |
+          # OnKernel ডিপ্লয়মেন্ট কমান্ড (উদাহরণস্বরূপ)
+          # আপনার OnKernel ড্যাশবোর্ড থেকে সঠিক cURL কমান্ড বা CLI টুল ব্যবহার করুন
+          echo "Deploying to OnKernel..."
+          # curl -X POST https://api.onkernel.app/v1/deploy \
+          #   -H "Authorization: Bearer $ONKERNEL_API_KEY" \
+          #   -F "code=@main.py" \
+          #   -F "requirements=@requirements.txt"
+          
+          # বর্তমানে লোকালি রান করে দেখানোর জন্য:
+          python -m uvicorn main:app --host 0.0.0.0 --port 8000 &
