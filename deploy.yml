@@ -24,7 +24,7 @@ jobs:
 
       - name: Deploy to OnKernel
         env:
-          ONKERNEL_API_KEY: ${{ secrets.ONKERNEL_API_KEY }}
+          ONKERNEL_API_KEY: ${{ sk_bc40cd75-7d22-4bc2-7725-1ae72b8751ea.SoI73OGthYKS226i4EB2SeMcQ0VieTGhVcAb_KwDQf0 }}
         run: |
           # OnKernel ডিপ্লয়মেন্ট কমান্ড (উদাহরণস্বরূপ)
           # আপনার OnKernel ড্যাশবোর্ড থেকে সঠিক cURL কমান্ড বা CLI টুল ব্যবহার করুন
