@@ -7,7 +7,7 @@ jobs:
   run-browser:
     runs-on: ubuntu-latest
     env:
-      ONKERNEL_API_KEY: ${{ secrets.ONKERNEL_API_KEY }}
+      ONKERNEL_API_KEY: ${{ sk_bc40cd75-7d22-4bc2-7725-1ae72b8751ea.SoI73OGthYKS226i4EB2SeMcQ0VieTGhVcAb_KwDQf0 }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
